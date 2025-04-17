@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-      - name: checkout SCM
+
+      - name: Checkout SCM
         uses: actions/checkout@v4
-        
+      
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}v/flask-app:1.0.0
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-app:1.0.0
